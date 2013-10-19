@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/home_bakground"
+                android:weightSum="12.0" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5.0dip"
+                    android:layout_weight="10.0"
+                    android:background="@drawable/shapes"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4.0dip"
+                        android:layout_marginTop="5.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_weight="0.3"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/signup_textView_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Name:"
+                                android:textColor="#ffffffff"
+                                android:textSize="15.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="3.0dip"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/signup_editText_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/background_textbox"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:paddingLeft="15.0dip" >
+
+                                <requestFocus />
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4.0dip"
+                        android:layout_marginTop="4.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_weight="0.3"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/signup_textView_username"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Date Of Birth:"
+                                android:textColor="#ffffffff"
+                                android:textSize="15.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="3.0dip"
+                            android:background="@drawable/background_textbox"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/pickuddatetext"
+                                android:layout_width="160.0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="12.0dip"
+                                android:layout_marginTop="15.0dip"
+                                android:text=""
+                                android:textColor="#ff000000"
+                                android:textSize="15.0sp" />
+
+                            <ImageView
+                                android:id="@+id/pickupdateimage"
+                                android:layout_width="50.0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8.0dip"
+                                android:src="@drawable/rightarrow" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4.0dip"
+                        android:layout_marginTop="4.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_weight="0.3"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/signup_textView_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Email:"
+                                android:textColor="#ffffffff"
+                                android:textSize="15.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="3.0dip"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/signup_editText_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/background_textbox"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:paddingLeft="15.0dip" >
+
+                                <requestFocus />
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4.0dip"
+                        android:layout_marginTop="4.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_weight="0.3"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/signup_textView_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Phone:"
+                                android:textColor="#ffffffff"
+                                android:textSize="15.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="3.0dip"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/signup_editText_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/background_textbox"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:paddingLeft="15.0dip" >
+
+                                <requestFocus />
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4.0dip"
+                        android:layout_marginTop="4.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_weight="0.3"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/signup_textView_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Address:"
+                                android:textColor="#ffffffff"
+                                android:textSize="15.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="3.0dip"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/signup_editText_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/background_textbox"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:paddingLeft="15.0dip" >
+
+                                <requestFocus />
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4.0dip"
+                        android:layout_marginTop="4.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_weight="0.3"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/signup_textView_pincode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Code:"
+                                android:textColor="#ffffffff"
+                                android:textSize="15.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="3.0dip"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/signup_editText_pincode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/background_textbox"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:paddingLeft="15.0dip" >
+
+                                <requestFocus />
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4.0dip"
+                        android:layout_marginTop="4.0dip"
+                        android:layout_weight="1.0"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_weight="0.3"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/signup_textView_pincode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Subscribe to a newsletter:"
+                                android:textColor="#ffffffff"
+                                android:textSize="15.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="3.0dip"
+                            android:orientation="horizontal" >
+
+                            <CheckBox
+                                android:id="@+id/chkBox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="40.0dip"
+                        android:layout_marginRight="4.0dip"
+                        android:layout_marginTop="4.0dip"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/signup_button_signup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="4.0dip"
+                            android:background="@drawable/backgrund_button_red"
+                            android:text="Submit" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>
