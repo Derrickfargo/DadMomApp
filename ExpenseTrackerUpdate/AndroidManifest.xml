@@ -11,21 +11,26 @@
     <permission
         android:name="com.example.expensetrackerupdate.maps.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
-     <uses-permission android:name="com.example.expensetrackerupdate.maps.permission.MAPS_RECEIVE" />
+
+    <uses-permission android:name="com.example.expensetrackerupdate.maps.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    
     <!-- Required to show current location -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <!-- Required OpenGL ES 2.0. for Maps V2 -->
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -50,10 +55,49 @@
         </activity>
         <activity android:name=".MyCalendarActivity" >
         </activity>
-        <activity android:name=".MapForLocation" >
+        <activity android:name=".MapActivity" >
         </activity>
-         <activity android:name=".Residential" >
+        <activity android:name=".ResidentialEditActivity" >
         </activity>
+        <activity android:name=".MedicalHistory" >
+        </activity>
+        <activity android:name=".MedicalHistory_Edit" >
+        </activity>
+        <activity android:name=".Medical_ListActivity" >
+        </activity>
+        <activity android:name=".ResidentialActivity" >
+        </activity>
+        <activity android:name=".ChildExpenseActivity" >
+        </activity>
+        <activity android:name=".ProductListActivity" >
+        </activity>
+        <activity android:name=".ReportActivity" >
+        </activity>
+        <activity android:name=".BlogActivity" >
+        </activity>
+        <activity android:name=".TwiloActivity" >
+        </activity>
+        <activity android:name=".SimpleListActivity" >
+        </activity>
+        <activity android:name=".ReminderActivity" >
+        </activity>
+        <activity android:name=".UpdateProfile" >
+        </activity>
+        <activity android:name=".ReminderAlarm" >
+            </activity>
+            <receiver android:name="ReminderAlarm" >
+        </receiver>
+        <activity android:name=".ResidentialCameraActivity" >
+        </activity>
+         <activity android:name=".ChildListActivity" >
+        </activity>
+          <activity android:name=".ResidentialGraphActivity" >
+        </activity>
+          <activity android:name=".ExpenseGraphActivity" >
+        </activity>
+       
+
+        
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAstm2TMop_GxosotwXVP4baxs1-jfFUCw" />

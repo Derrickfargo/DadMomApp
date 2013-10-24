@@ -3,7 +3,38 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/home_bakground" >
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54.0dip"
+        android:background="@drawable/header"
+        >
 
+<!--         <ImageView -->
+<!--             android:id="@+id/logOut" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="35.0dip" -->
+<!--             android:layout_marginTop="10.0dip" -->
+<!--             android:layout_weight="3.0" -->
+<!--             android:src="@drawable/logout" /> -->
+
+        <TextView
+            android:id="@+id/Text"
+            android:layout_width="match_parent"
+            android:layout_height="40.0dip"
+           
+            android:gravity="center_vertical|center"
+            android:text="I\&apos;m between!"
+            android:textColor="@color/black"
+            android:textSize="20.0dip" />
+
+<!--         <ImageView -->
+<!--             android:id="@+id/editProfile" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="35.0dip" -->
+<!--             android:layout_marginTop="10.0dip" -->
+<!--             android:layout_weight="3.0" -->
+<!--             android:src="@drawable/edit_profile" /> -->
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
@@ -83,6 +114,14 @@
                 android:layout_marginTop="2.0dip"
                 android:background="@drawable/background_button_blue"
                 android:text="Sign Up" />
+
+            <CheckBox
+  android:layout_gravity="center_horizontal"
+                android:id="@+id/check_remember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember me" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -95,7 +134,8 @@
         android:layout_marginTop="18.0dip"
         android:clickable="false"
         android:padding="5.0dip"
-        android:text="forget_password"
-        android:textColor="#ffffffff" />
+        android:gravity="center_horizontal"
+        android:text="Forgot password"
+        android:textColor="#000000" />
 
 </RelativeLayout>

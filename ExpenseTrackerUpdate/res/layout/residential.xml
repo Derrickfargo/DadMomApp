@@ -3,7 +3,38 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
+<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="54.0dip"
+        android:background="@drawable/header"
+        android:weightSum="9.0" >
 
+        <ImageView
+            android:id="@+id/logOut"
+            android:layout_width="wrap_content"
+            android:layout_height="35.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_weight="3.0"
+            android:src="@drawable/logout" />
+
+        <TextView
+            android:id="@+id/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="40.0dip"
+            android:layout_weight="3.0"
+            android:gravity="center_vertical"
+            android:text="I\&apos;m between!"
+            android:textColor="@color/black"
+            android:textSize="20.0dip" />
+
+        <ImageView
+            android:id="@+id/editProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="35.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_weight="3.0"
+            android:src="@drawable/edit_profile" />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -73,11 +104,14 @@
 
                             <ImageView
                                 android:id="@+id/capturedImage"
-                                android:layout_width="160.0dip"
-                                android:layout_height="160.0dip"
-                                android:paddingLeft="15.0dip"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                 android:layout_marginTop="10dp"
+                                 android:layout_marginBottom="10dp"
+                                android:paddingLeft="20dp"
                                 android:paddingRight="15.0dip"
-                                android:background="@drawable/ic_launcher" />
+                                
+                                />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -491,6 +525,7 @@
                                 android:paddingRight="15.0dip"
                                 android:singleLine="true"
                                 android:text=""
+                                android:maxLines="1"
                                 android:textColor="#ffffffff"
                                 android:textSize="15.0sp" />
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_bakground"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54.0dip"
+        android:background="@drawable/header"
+        >
+
+<!--         <ImageView -->
+<!--             android:id="@+id/logOut" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="35.0dip" -->
+<!--             android:layout_marginTop="10.0dip" -->
+<!--             android:layout_weight="3.0" -->
+<!--             android:src="@drawable/logout" /> -->
+
+        <TextView
+            android:id="@+id/Text"
+            android:layout_width="match_parent"
+            android:layout_height="40.0dip"
+           
+            android:gravity="center_vertical|center"
+            android:text="I\&apos;m between!"
+            android:textColor="@color/black"
+            android:textSize="20.0dip" />
+
+<!--         <ImageView -->
+<!--             android:id="@+id/editProfile" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="35.0dip" -->
+<!--             android:layout_marginTop="10.0dip" -->
+<!--             android:layout_weight="3.0" -->
+<!--             android:src="@drawable/edit_profile" /> -->
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/dialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff000000"
+        android:src="@drawable/dial" />
+
+    <ImageButton
+        android:id="@+id/hangupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff000000"
+        android:src="@drawable/hangup" />
+
+    <EditText
+        android:id="@+id/numberField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip" />
+
+</LinearLayout>

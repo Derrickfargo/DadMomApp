@@ -13,6 +13,8 @@ import java.util.Locale;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,6 +54,12 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.calender);
 
+		
+		Intent intent = new Intent(this, MyCalendarActivity.class);
+		PendingIntent pending = PendingIntent.getService(this, 0, intent, 0);
+		AlarmManager alarm = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+		alarm.set(AlarmManager.RTC_WAKEUP, 2, pending);
+		
 		_calendar = Calendar.getInstance(Locale.getDefault());
 		month = _calendar.get(Calendar.MONTH) + 1;
 		year = _calendar.get(Calendar.YEAR);
@@ -389,7 +397,7 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
-			Intent resi = new Intent(MyCalendarActivity.this,Residential.class);
+			Intent resi = new Intent(MyCalendarActivity.this,ResidentialActivity.class);
 			startActivity(resi);
 		}
 
@@ -409,4 +417,5 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 			return currentWeekDay;
 		}
 	}
+	
 }

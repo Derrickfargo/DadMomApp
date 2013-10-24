@@ -1,28 +1,31 @@
 package com.example.expensetrackerupdate;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,23 +34,28 @@ import android.widget.Toast;
 public class LoginScreen extends Activity{
 	EditText username,password;
 	Button login,signup;
-	TextView forgetpassword;
+	TextView forgetpassword,headettext;
 	String usernameget,passwordget;
-	String success = "";
+	String success = "",failure="";
+	String url;
+	String userName,passWord,personName,doB,emaiL,phonE,addresS,pinCode,suB;
 	private Context context = this;
 	String PREFS_NAME = "Expense_Tracker";
 	SharedPreferences AppID;
+	ArrayList<String> arryList;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.loginscreen);
-		setTitle("DadMom");
 		username = (EditText)findViewById(R.id.login_username);
 		password = (EditText)findViewById(R.id.login_password);
 		login = (Button)findViewById(R.id.bntton_login_login);
 		signup = (Button)findViewById(R.id.bntton_login_signup);
 		forgetpassword = (TextView)findViewById(R.id.textView_forgetpasssword);
-
-
+		headettext = (TextView)findViewById(R.id.Text);
+		headettext.setText("DadMom");
+		
+		arryList = new ArrayList<String>();
 		login.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -66,6 +74,7 @@ public class LoginScreen extends Activity{
 				}
 				if(!usernameget.equals("") && !passwordget.equals("")){
 					new Login().execute();
+					
 				}
 			}
 		});
@@ -105,33 +114,59 @@ public class LoginScreen extends Activity{
 		@SuppressWarnings("unused")
 		protected Boolean doInBackground(Void... unused) {
 			JSONObject json = new JSONObject();
-			JSONArray jArray;
-			try {
-				HttpClient httpclient = new DefaultHttpClient();
-				HttpPost httppost = new HttpPost("http://10.0.1.11/dadmom/webservices/login_user.php?user_name="+ usernameget + "&password=" + passwordget);
+				JSONObject json2;
+				try {
+					  url= ExpenseTrackerConstant.webServiceUrl+ExpenseTrackerConstant.loginuser;
+			        	HttpClient httpclient = new DefaultHttpClient();
+			        	HttpPost httppost = new HttpPost(url);
+					List<NameValuePair> params = new ArrayList<NameValuePair>();
 
-				HttpResponse response = httpclient.execute(httppost);
-				System.out.println("Gurdev_Register*****response*****"
-						+ response);
-				HttpEntity entity = response.getEntity();
-				System.out.println("Gurdev_Register*****entity*****" + entity);
-				Log.d("bbb", "bbb" + entity);
-				// If the response does not enclose an entity, there is no need
-				if (entity != null) {
-					Log.d("Response", "messageLogin");
-					InputStream instream = entity.getContent();
-					String result = Refrence.convertStreamToString(instream);
-					json = new JSONObject(result);
-					Log.d("re" + result, "msg");
-					success = json.getString("login");
-					Log.d("Response", "messageLogin" + success);
-					jArray = json.getJSONArray("responsedata");
-					
-					
-					
-					
-					
 
+				     params.add(new BasicNameValuePair("user_name", usernameget));
+				     params.add(new BasicNameValuePair("password", passwordget));
+				     
+			            httppost.setEntity(new UrlEncodedFormEntity(params));
+			         
+			            HttpResponse httpResponse = httpclient.execute(httppost);
+			        
+			            HttpEntity httpEntity = httpResponse.getEntity();
+			            if (httpEntity != null) {
+							Log.d("Response", "messageLogin");
+							InputStream instream = httpEntity.getContent();
+							String result = Refrence.convertStreamToString(instream);
+							json = new JSONObject(result);
+							Log.d("re" + result, "msg");
+//							
+							json2 = json.getJSONObject("response");
+							success = json2.getString("code");
+							
+							failure = json2.getString("msg");
+							Log.d("code", "code" + success);
+							if(success.equals("200")){
+							userName = json2.getString("user_name");
+					
+							passWord = json2.getString("password");
+							personName = json2.getString("person_name");
+							doB = json2.getString("dob");
+							emaiL = json2.getString("email");
+							phonE = json2.getString("phone");
+							addresS = json2.getString("address");
+							
+							pinCode = json2.getString("pin_code");
+							suB = json2.getString("is_subscribed");
+							
+							arryList.add(userName);
+							arryList.add(passWord);
+							arryList.add(personName);
+							arryList.add(doB);
+							arryList.add(emaiL);
+							arryList.add(phonE);
+							arryList.add(addresS);
+							arryList.add(pinCode);
+							arryList.add(suB);
+							Log.d("arryList", "vvvv"+arryList);
+							}
+					
 				}
 			} catch (Exception e) {
 
@@ -142,17 +177,26 @@ public class LoginScreen extends Activity{
 		protected void onPostExecute(Boolean unused) {
 			super.onPostExecute(unused);
 			dialog.dismiss();
-			if (success.equalsIgnoreCase("Success")) {
+			if (success.equalsIgnoreCase("200")) {
+				AppID = getApplication().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 				SharedPreferences.Editor prefsEditor = AppID.edit();
 				prefsEditor.putString("UserName", usernameget);
 				prefsEditor.putString("Password", passwordget);
+				prefsEditor.putString("personname", personName);
+				prefsEditor.putString("dateob", doB);
+				prefsEditor.putString("EMail", emaiL);
+				prefsEditor.putString("Phone", phonE);
+				prefsEditor.putString("Address", addresS);
+				prefsEditor.putString("Pincode", pinCode);
+				prefsEditor.putString("Subccribe", suB);
 				prefsEditor.commit();
 				Toast.makeText(LoginScreen.this, "Loged In Successfully", 3000).show();
 				Intent intent = new Intent(LoginScreen.this, HomeActivity.class);
+				intent.putExtra("ARRAYLIST", arryList);
 				startActivity(intent);
 				finish();
 			} else {
-				Toast.makeText(LoginScreen.this, "Access denied", 3000).show();
+				Toast.makeText(LoginScreen.this, failure, 3000).show();
 			}
 		};
 
